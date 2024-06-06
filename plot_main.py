@@ -5,8 +5,10 @@ def main_plot(Manager:object):
 
     pg.init()
     pg.font.init()
-    font = pg.font.Font(FONT, IMG_BRICK_WALL_SIZE[1] // 3)
-
+    if FLOOR_NUMBER<30:
+        font = pg.font.Font(FONT, IMG_BRICK_WALL_SIZE[1] //3)
+    else:
+        font = pg.font.Font(FONT, IMG_BRICK_WALL_SIZE[1] //2)
     screen = pg.display.set_mode((WINDOW_X, WINDOW_Y))
     clock = pg.time.Clock()
 
