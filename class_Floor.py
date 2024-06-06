@@ -8,7 +8,7 @@ class Floor:
     def __init__ (self,number_floor,x,y):
         self.number_floor = number_floor
         self.timer = -2
-        self.occupied = True
+        self.ocupied = False
         self.img = pg.transform.scale (pg.image.load(IMG_BRICK_WALL),IMG_BRICK_WALL_SIZE)
         self.line = pg.transform.scale (pg.image.load(IMG_LINE),(IMG_LINE_SIZE))
         self.x = x
@@ -17,14 +17,14 @@ class Floor:
         self.time = Timer(self.number_floor,self.x,self.y)
 
     def update_valuos(self,time):
-        self.occupied = False
+        self.ocupied = True
         self.time.set_time (time)
         self.floor_button.color = 1
 
 
     def get_Invitation_Button(self,event_pos):
         if self.floor_button.button_erea.collidepoint(event_pos):
-            if self.occupied:
+            if not self.ocupied:
               return True
         return False
  

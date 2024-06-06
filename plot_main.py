@@ -3,6 +3,8 @@ from setting import *
 from class_Bulding import *
 def main_plot(Manager:object):
 
+# Initializes Pygame, sets up the display, and runs the main event loop.
+
     pg.init()
     pg.font.init()
     if FLOOR_NUMBER<30:
