@@ -10,6 +10,8 @@ LEFT_SPACE = 200
 IMG_BRICK_WALL ='brick_wall.png'
 IMG_LINE = 'line.png'
 IMG_SKY_BACKGROUND='Sky background2.jpg'
+IMG_BOTTON_GREEN = 'green_button.png'
+IMG_BOTTON_GRAEY = 'grey_button.png'
 IMG_BRICK_WALL_SIZE = (150, 43) # (x, y)
 if (WINDOW_Y - BOTTOM_SPACE)/FLOOR_NUMBER < 50:
     IMG_BRICK_WALL_SIZE = (150,(WINDOW_Y - BOTTOM_SPACE)//FLOOR_NUMBER-7)

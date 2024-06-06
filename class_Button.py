@@ -9,8 +9,8 @@ class Button:
         self.number_floor=number_floor
         self.x= x + BUTTON_LOCATION [0]
         self.y=y + BUTTON_LOCATION [1]
-        self.img_green=pg.transform.scale (pg.image.load('/home/mefathim/Downloads/green_button.png'),IMG_BOTTON_SIZE)
-        self.img_gray=pg.transform.scale (pg.image.load('/home/mefathim/Downloads/grey_button.png'),IMG_BOTTON_SIZE)
+        self.img_green=pg.transform.scale (pg.image.load(IMG_BOTTON_GREEN),IMG_BOTTON_SIZE)
+        self.img_gray=pg.transform.scale (pg.image.load(IMG_BOTTON_GRAEY),IMG_BOTTON_SIZE)
         self.arr=[self.img_gray,self.img_green]
         self.button_erea = pg.Rect(self.x - BUTTON_EREA[0], self.y - BUTTON_EREA[1] ,BUTTON_SIZE[0] + (BUTTON_EREA[0]*2), BUTTON_SIZE[1] + BUTTON_EREA[1])
         pg.mixer.init()
