@@ -7,7 +7,7 @@ def main_plot(Manager:object):
     pg.font.init()
     font = pg.font.Font(FONT, IMG_BRICK_WALL_SIZE[1] // 3)
 
-    screen = pg.display.set_mode((1000, 800))
+    screen = pg.display.set_mode((WINDOW_X, WINDOW_Y))
     clock = pg.time.Clock()
 
     # here initialize items
@@ -26,6 +26,7 @@ def main_plot(Manager:object):
             if event.type==pg.MOUSEBUTTONDOWN:
                Manager.user_get_click (event.pos)
         # here plot everything
+        
         Manager.plot_manager(screen,font)
     
 
