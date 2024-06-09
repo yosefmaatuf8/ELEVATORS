@@ -53,57 +53,32 @@ The selected elevator is assigned to respond to the request, and the time requir
 
 ### User Clicks the Button:
 The user clicks the order button on a specific floor.
-This triggers a MOUSEBUTTONDOWN event in Pygame.
 
-Event Handling in Manager Class:
-The Manager class handles this event in the handle_click method.
+### Event Handling in Manager Class:
+The Manager class handles this event in the user_get_click method.
 The method calculates the actual position considering scroll offsets and checks if the click is on any floor's button.
 
-Floor Class:
+### Floor Class:
   Each Floor object has a get_invitation_button method that checks if the button was clicked and if the floor is not occupied.
   If true, it returns that the button was clicked.
 
-Elevator System:
+### Elevator System:
   The Manager class calls the choose_elevator method of the ElevatorSystem class to find the nearest available elevator.
   The ElevatorSystem calculates the nearest elevator based on the current positions and queues of the elevators.
 
-Updating Floor State:
-  The chosen elevator is added to the floor's queue.
+### Updating Floor State:
+  After selecting the nearest elevator, the floor enters at the end of the elevator queue
   The update_values method of the Floor class is called to update the floor's state and set the timer.
 
-Elevator Class:
-  The elevator starts moving towards the requested floor.
+### Elevator Class:
+  In each iteration the elevator updates its position towards its location
   Once the elevator arrives, it updates its position and removes the floor from its queue.
 
-Involved Classes
-
-Manager:
-Handles user interactions and manages the connection between floors and elevators.
-Methods: handle_click, update_timer, render.
-
-Floor:
-Represents a floor in the building.
-Handles button clicks and updates its state.
-Methods: get_invitation_button, update_values, plot_floor.
-
-ElevatorSystem:
-Manages a collection of elevators.
-Determines which elevator should respond to a floor request.
-Methods: choose_elevator, nearest_elevator, plot_all_elevators.
-
-Elevator:
-epresents an elevator in the building.
-Moves between floors based on requests.
-Methods: add_call_elevator, update_position, plot_elevator.
 
 ### Summary of the Flow
-  Button Press: User clicks the order button.
-  Event Handling: Manager class detects the click event.
-  Button Check: Floor class checks if the button was clicked.
+Button Press: User clicks the order button.
+Event Handling: Manager class detects the click event.
+Button Check: Floor class checks if the button was clicked.
  Find Nearest Elevator: ElevatorSystem finds the nearest available elevator.
  Update Floor: Floor updates its state.
- Move Elevator: Elevator moves to the requested floor and updates its position.
-
-This flow ensures that the system responds to user requests efficiently and updates the state of floors and elevators appropriately.
-
-
+ Move Elevator: Elevator moves to the requested floor and updates its position. 
