@@ -11,7 +11,7 @@ The Elevators Project is a simulation of elevator systems, using pygame
 ## Installation
 1. Clone the repository:
    ```bash
-https://github.com/yosefmaatuf8/ELEVATORS/tree/master
+git clone https://github.com/yosefmaatuf8/ELEVATORS.git
 ## classes
 - manager: Manages the connection between floors and elevators, handles user interactions, and updates the simulation.
 - Building: Initializes and plots the building with multiple floors.
