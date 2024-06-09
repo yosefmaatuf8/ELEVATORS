@@ -13,7 +13,7 @@ The Elevators Project is a simulation of elevator systems, using pygame
    ```bash
 https://github.com/yosefmaatuf8/ELEVATORS/tree/master
 ## classes
-    - manager: Manages the connection between floors and elevators, handles user interactions, and updates the simulation.
+- manager: Manages the connection between floors and elevators, handles user interactions, and updates the simulation.
     - Building: Initializes and plots the building with multiple floors.
     - Floor: Represents a floor in the building, handles button clicks, and updates the state of the floor.
     - Button: Represents a button on a floor, changes color when clicked, and plays a sound.
