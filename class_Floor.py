@@ -7,6 +7,19 @@ from class_Button import*
 from elements import *
 
 class Floor:
+    """
+    Represents a floor in a building.
+
+    Attributes:
+        number_floor (int): The number of the floor.
+        timer (int): Timer for the floor.
+        occupied (bool): Indicates if the floor is occupied.
+        line (pygame.Surface): Image representing the separator line between floors.
+        x (int): X-coordinate of the floor.
+        y (int): Y-coordinate of the floor.
+        floor_button (Button): Button associated with the floor.
+        time (Timer): Timer object for the floor.
+    """
     def __init__ (self,number_floor,x,y):
         self.number_floor = number_floor
         self.timer = -2

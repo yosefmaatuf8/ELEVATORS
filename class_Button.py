@@ -5,6 +5,16 @@ from elements import *
 
     
 class Button:
+    """
+    Represents a button associated with a floor in a building.
+
+    Attributes:
+        color (int): The color of the button (0 for gray, 1 for green).
+        number_floor (int): The number of the floor associated with the button.
+        x (int): X-coordinate of the button.
+        y (int): Y-coordinate of the button.
+        button_erea (pygame.Rect): Rectangle representing the clickable area of the button.
+    """
     
     def __init__ (self,number_floor,x,y):
         self.color=0
@@ -19,18 +29,12 @@ class Button:
         self.ding =pg.mixer.Sound(DING)
     
     def exchange_color_to_grae_and_Sound_ding(self):
+        """
+        Changes the button color to gray and plays a sound When the elevator reaches the floor
+        """
         if self.color == 1:
             self.color = 0
             pg.mixer.Sound.play(self.ding)
-
-
-            
-        
-        
-        
-
-    def Button_is_green(self):
-        return bool(self.color)
 
 
     def plot_Button(self,screen,font):

@@ -6,6 +6,12 @@ from elements import *
     
     
 class Elevator_system:
+    """
+    Represents an elevator system managing multiple elevators.
+
+    Attributes:
+        Elevators (list): List of Elevator objects in the system.
+    """
     def __init__(self,floor_0):
         self.Elevators=[]
         self.initialize_Elevators(floor_0)
@@ -20,6 +26,15 @@ class Elevator_system:
 
 
     def nearest_elevator (self,floor):
+        """
+        Finds the nearest elevator to a given floor.
+
+        Args:
+            floor (Floor): The target floor.
+
+        Returns:
+            tuple: The nearest elevator object and the time it will take to reach the floor.
+        """
         nearest=(-1,float('inf'))
         for elevator_i in self.Elevators:
             if elevator_i.Q:
@@ -59,6 +74,8 @@ class Elevator:
 
 
     def update_x_y(self,time_past):
+          """Updates the x and y coordinates of the elevator towards its destination
+            based on the elapsed time."""
           if self.y + time_past * MOVE_ELEVATOR < self.location.y:
               self.y += time_past * MOVE_ELEVATOR
 

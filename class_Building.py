@@ -6,6 +6,10 @@ import math
 from elements import *
 
 class Building:
+    """
+    Represents a building with multiple floors.
+    """
+
     def __init__(self):
         self.Floors=[]
         self.initialize_floors()
