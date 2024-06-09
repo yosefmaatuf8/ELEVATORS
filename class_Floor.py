@@ -10,7 +10,7 @@ class Floor:
     def __init__ (self,number_floor,x,y):
         self.number_floor = number_floor
         self.timer = -2
-        self.ocupied = False
+        self.occupied = False
         self.img = pg.transform.scale (pg.image.load(IMG_BRICK_WALL),IMG_BRICK_WALL_SIZE)
         self.line = pg.transform.scale (pg.image.load(IMG_LINE),(IMG_LINE_SIZE))
         self.x = x
@@ -18,8 +18,8 @@ class Floor:
         self.floor_button=Button(self.number_floor,self.x,self.y)
         self.time = Timer(self.number_floor,self.x,self.y)
 
-    def update_valus(self,time):
-        self.ocupied = True
+    def update_values(self,time):
+        self.occupied = True
         self.time.set_time (time)
         self.floor_button.color = 1
 
@@ -32,11 +32,11 @@ class Floor:
             event_pos: Position of the mouse click.
 
         Returns:
-            bool: True if the button is clicked and floor not ocupied, False otherwise.
+            bool: True if the button is clicked and floor not occupied, False otherwise.
         """
         
         if self.floor_button.button_erea.collidepoint(event_pos):
-            if not self.ocupied:
+            if not self.occupied:
               return True
         return False
  

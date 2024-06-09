@@ -66,10 +66,10 @@ class Elevator:
               self.y -= time_past * MOVE_ELEVATOR
           else: 
               self.location.floor_button.exchange_color_to_grae_and_Sound_ding ()
-              self.location.ocupied = True
+              self.location.occupied = True
               if self.location.time.time <= -2:     
                 if self.Q:
-                    self.location.ocupied = False
+                    self.location.occupied = False
                     self.location = self.Q.pop (0)
 
 

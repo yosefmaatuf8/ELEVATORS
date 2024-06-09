@@ -30,7 +30,7 @@ class manager:
         """
         Handles user click events.
 
-        Args:
+     Args:
         event (pg.event): The Pygame event object.
         scroll_x (int): The current scroll offset on the x-axis.
         scroll_y (int): The current scroll offset on the y-axis.
@@ -41,7 +41,7 @@ class manager:
             for floor_loop in self.Building.Floors:
                 if floor_loop.get_Invitation_Button(event_pos,scroll_x, scroll_y):
                     elevator_near= self.elevators.chose_elevator(floor_loop)
-                    floor_loop.update_valus(elevator_near)
+                    floor_loop.update_values(elevator_near)
 
 
     def plot_manager(self,screen,font):
