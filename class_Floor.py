@@ -4,6 +4,8 @@ import pygame as pg
 import time
 from claas_Timer import *
 from class_Button import*
+from elements import *
+
 class Floor:
     def __init__ (self,number_floor,x,y):
         self.number_floor = number_floor
@@ -16,13 +18,23 @@ class Floor:
         self.floor_button=Button(self.number_floor,self.x,self.y)
         self.time = Timer(self.number_floor,self.x,self.y)
 
-    def update_valuos(self,time):
+    def update_valus(self,time):
         self.ocupied = True
         self.time.set_time (time)
         self.floor_button.color = 1
 
 
-    def get_Invitation_Button(self,event_pos):
+    def get_Invitation_Button(self,event_pos,scroll_x, scroll_y):
+        """
+        Checks if the invitation button is clicked.
+
+        Args:
+            event_pos: Position of the mouse click.
+
+        Returns:
+            bool: True if the button is clicked and floor not ocupied, False otherwise.
+        """
+        
         if self.floor_button.button_erea.collidepoint(event_pos):
             if not self.ocupied:
               return True
@@ -33,5 +45,5 @@ class Floor:
         if self.number_floor < FLOOR_NUMBER - 1:
             screen.blit(self.line,(self.x,self.y-IMG_LINE_SIZE[1]))           
         self.floor_button.plot_Button(screen,font)
-        self.time.apdet_time(time_past)
+        self.time.update_time(time_past)
         self.time.plot_time(screen,font)

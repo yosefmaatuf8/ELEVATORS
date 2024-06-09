@@ -1,11 +1,11 @@
 import pygame as pg
 import time
 from setting import *       
-    
+from elements import *
 
     
     
-class Elevator_sistem:
+class Elevator_system:
     def __init__(self,floor_0):
         self.Elevators=[]
         self.initialize_Elevators(floor_0)
@@ -13,7 +13,7 @@ class Elevator_sistem:
         
     def initialize_Elevators(self,floor_0):
         x = LEFT_SPACE + FLOOR_SIZE[0]
-        y = WINDOW_Y-BOTTOM_SPACE
+        y = WORLD_SIZE[1]-BOTTOM_SPACE
         for Elevators_i in range(ELEVATOR_NUMBER):  
             self.Elevators.append(Elevator(floor_0,x,y))
             x += ELEVATOR_SIZE[0]

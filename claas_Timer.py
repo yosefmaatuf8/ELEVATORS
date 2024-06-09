@@ -2,6 +2,8 @@
 from setting import *
 import pygame as pg
 import time
+from elements import *
+
 class Timer:
 
     def __init__(self,Which_flor,Which_flor_x,Which_flor_y) -> None:
@@ -14,7 +16,7 @@ class Timer:
         self. time = value
 
 
-    def apdet_time(self,time_past):
+    def update_time(self,time_past):
         if self.time > -2:
                 self.time -= time_past
 
