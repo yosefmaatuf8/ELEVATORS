@@ -77,33 +77,32 @@ Event Handling in Manager Class:
 
 Involved Classes
 
-    Manager:
-        Handles user interactions and manages the connection between floors and elevators.
-        Methods: handle_click, update_timer, render.
+   Manager:
+     Handles user interactions and manages the connection between floors and elevators.
+     Methods: handle_click, update_timer, render.
 
     Floor:
-        Represents a floor in the building.
-        Handles button clicks and updates its state.
-        Methods: get_invitation_button, update_values, plot_floor.
+     Represents a floor in the building.
+     Handles button clicks and updates its state.
+     Methods: get_invitation_button, update_values, plot_floor.
 
     ElevatorSystem:
-        Manages a collection of elevators.
-        Determines which elevator should respond to a floor request.
-        Methods: choose_elevator, nearest_elevator, plot_all_elevators.
+      Manages a collection of elevators.
+      Determines which elevator should respond to a floor request.
+      Methods: choose_elevator, nearest_elevator, plot_all_elevators.
 
     Elevator:
-        Represents an elevator in the building.
-        Moves between floors based on requests.
-        Methods: add_call_elevator, update_position, plot_elevator.
+      epresents an elevator in the building.
+      Moves between floors based on requests.
+      Methods: add_call_elevator, update_position, plot_elevator.
 
-Summary of the Flow
-
-    Button Press: User clicks the order button.
-    Event Handling: Manager class detects the click event.
-    Button Check: Floor class checks if the button was clicked.
-    Find Nearest Elevator: ElevatorSystem finds the nearest available elevator.
-    Update Floor: Floor updates its state.
-    Move Elevator: Elevator moves to the requested floor and updates its position.
+### Summary of the Flow
+  Button Press: User clicks the order button.
+  Event Handling: Manager class detects the click event.
+  Button Check: Floor class checks if the button was clicked.
+ Find Nearest Elevator: ElevatorSystem finds the nearest available elevator.
+ Update Floor: Floor updates its state.
+ Move Elevator: Elevator moves to the requested floor and updates its position.
 
 This flow ensures that the system responds to user requests efficiently and updates the state of floors and elevators appropriately.
 
