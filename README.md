@@ -30,19 +30,19 @@ When determining the nearest elevator, the algorithm considers the position of e
 
 ## Algorithm for Finding the Nearest Elevator
 
-    **Initialization:**
+### 1    Initialization:
         The Elevator_sistem class initializes a list of Elevator objects. Each Elevator object represents an elevator in the system.
 
-    **Calculating Distance and Time:**
+### 2  Calculating Distance and Time:
         The nearest_elevator method iterates through all elevators in the system.
         For each elevator, it calculates the time required to reach the requesting floor from the last floor in the elevator's queue. If the elevator has no pending requests, the time is calculated from its current location.
         The distance function calculates the absolute distance between the two floors' y-coordinates.
         The Convert_distance_to_time function converts this distance into time using the elevator's speed.
-
-  **  Selecting the Nearest Elevator:**
+        
+### 3   Selecting the Nearest Elevator:
         The algorithm keeps track of the elevator with the shortest calculated time to reach the requesting floor.
         After iterating through all the elevators, it selects the elevator with the minimum time.
 
-    **Assigning the Elevator:**
+### 4    Assigning the Elevator:
         The selected elevator is assigned to respond to the request, and the time required for the elevator to reach the requesting floor is returned.
 
