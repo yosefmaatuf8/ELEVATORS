@@ -1,8 +1,8 @@
 import pygame as pg
 import time
 from setting import *       
-from elements import *
-
+from estate import *
+from Elevator import *
     
     
 class Elevator_system:
@@ -28,10 +28,8 @@ class Elevator_system:
     def nearest_elevator (self,floor):
         """
         Finds the nearest elevator to a given floor.
-
         Args:
             floor (Floor): The target floor.
-
         Returns:
             tuple: The nearest elevator object and the time it will take to reach the floor.
         """
@@ -48,6 +46,7 @@ class Elevator_system:
              
 
     def chose_elevator(self,floor): 
+       """Select an elevator for a reservation on a certain floor"""
        elevator,time = self.nearest_elevator(floor)
        elevator.add_call_Elevator(floor)
        return time
@@ -55,41 +54,5 @@ class Elevator_system:
 
     def plot_all_elevators(self,screen,time_past):
         for elevatot_i in self.Elevators:
-            elevatot_i.update_x_y(time_past)
+            elevatot_i.move_elevator(time_past)
             elevatot_i.plot_Elevator(screen)
-
-
-
-            
-class Elevator:
-    def __init__(self,floor_0,x,y) -> None:
-        self.Q = []    
-        self.location = floor_0
-        self.x = x
-        self.y= y
-        self.img_Elevator= pg.transform.scale (pg.image.load(IMG_ELEVATOR),(IMG_ELEVATOR_SIZE))
-
-    def add_call_Elevator(self,floor):
-        self.Q.append(floor)
-
-
-    def update_x_y(self,time_past):
-          """Updates the x and y coordinates of the elevator towards its destination
-            based on the elapsed time."""
-          if self.y + time_past * MOVE_ELEVATOR < self.location.y:
-              self.y += time_past * MOVE_ELEVATOR
-
-          elif self.y - time_past * MOVE_ELEVATOR > self.location.y:
-              self.y -= time_past * MOVE_ELEVATOR
-          else: 
-              self.location.floor_button.exchange_color_to_grae_and_Sound_ding ()
-              self.location.occupied = True
-              if self.location.time.time <= -2:     
-                if self.Q:
-                    self.location.occupied = False
-                    self.location = self.Q.pop (0)
-
-
-    def plot_Elevator(self,screen):
-
-        screen.blit((self.img_Elevator),(self.x,self.y))

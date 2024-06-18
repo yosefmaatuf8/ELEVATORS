@@ -2,7 +2,7 @@
 from setting import *
 import pygame as pg
 import time
-from elements import *
+from estate import *
 
 class Timer:
 
@@ -17,8 +17,7 @@ class Timer:
 
 
     def update_time(self,time_past):
-        if self.time > -2:
-                self.time -= time_past
+        self.time -= time_past
 
 
     def get_time(self):

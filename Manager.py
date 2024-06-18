@@ -1,10 +1,11 @@
 import pygame as pg
 import time
 from setting import *
-from elements import *
+from estate import *
 import math
-from class_Building import *
-from class_elevator import *
+from Building import *
+from Elevator import *
+from Elevator_system import *
 class manager:  
     """
       responsible for connection between the classes floor and elevatrs
@@ -29,7 +30,6 @@ class manager:
     def user_get_click(self,event: pg.event,scroll_x, scroll_y):
         """
         Handles user click events.
-
      Args:
         event (pg.event): The Pygame event object.
         scroll_x (int): The current scroll offset on the x-axis.
@@ -37,11 +37,10 @@ class manager:
      """
         if event.type == pg.MOUSEBUTTONDOWN:
             event_pos = (event.pos[0] + scroll_x, event.pos[1] + scroll_y) 
-
             for floor_loop in self.Building.Floors:
                 if floor_loop.get_Invitation_Button(event_pos,scroll_x, scroll_y):
                     elevator_near= self.elevators.chose_elevator(floor_loop)
-                    floor_loop.update_values(elevator_near)
+                    floor_loop.Update_values_when_an_elevator_is_ordered(elevator_near)
 
 
     def plot_manager(self,screen,font):
